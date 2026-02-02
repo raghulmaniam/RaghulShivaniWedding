@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation & RSVP</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f5f5f5, #e3e0dc);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 24px;
+        }
+
+        .card {
+            background: #ffffff;
+            max-width: 800px;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 40px 32px 32px;
+            text-align: center;
+            border: 1px solid #e5ded5;
+        }
+
+        .monogram {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #b08f6a;
+            margin-bottom: 8px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: #2f2b26;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #9b8b7a;
+            margin-bottom: 24px;
+        }
+
+        .names {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #2f2b26;
+            margin-bottom: 8px;
+        }
+
+        .and {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: #b5a89a;
+            margin: 4px 0;
+        }
+
+        .details {
+            font-size: 0.98rem;
+            color: #5f5850;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .details strong {
+            font-weight: 500;
+            color: #b08f6a;
+        }
+
+        .countdown-wrapper {
+            margin: 24px auto 28px;
+            max-width: 420px;
+            background: #faf7f3;
+            border-radius: 16px;
+            border: 1px solid #efe4d7;
+            padding: 18px 22px;
+        }
+
+        .countdown-label {
+            font-size: 0.85rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #b5a89a;
+            margin-bottom: 8px;
+        }
+
+        .countdown {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: #2f2b26;
+        }
+
+        .rsvp-intro {
+            font-size: 0.98rem;
+            color: #5f5850;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .rsvp-deadline {
+            font-size: 0.9rem;
+            color: #9b8b7a;
+            margin-bottom: 24px;
+        }
+
+        .iframe-container {
+            width: 100%;
+            max-width: 650px;
+            height: 0;
+            padding-bottom: 62%;
+            position: relative;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        .iframe-rsvp {
+            width: 100%;
+            max-width: 650px;
+            height: 1100px;
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .footer-note {
+            font-size: 0.85rem;
+            color: #a39a91;
+            margin-top: 18px;
+        }
+
+        @media (max-width: 700px) {
+            .card {
+                padding: 28px 20px 24px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .names {
+                font-size: 1.4rem;
+            }
+
+            iframe {
+                height: 520px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .countdown-wrapper {
+                padding: 14px 16px;
+            }
+
+            iframe {
+                height: 460px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="monogram">Wedding Invitation</div>
+        <h1>We Are Getting Married!</h1> <br>
+
+        <!-- Replace with your names and venue details -->
+        <div class="names">Shivani &amp; Raghul</div> <br>
+        <div class="and">together with our families</div>
+
+        <p class="details">
+            Request the pleasure of your company and be a part of our wedding celebration<br>
+            Reception on <strong>Sunday, 15 March 2026, 7:30 PM onwards.</strong><br>
+            Wedding on <strong>Sunday, 16 March 2026, (Muhurt) 9:13 AM.</strong><br><br>
+            @ <strong>Belgaum Foundry Cluster, Belgaum, Karnataka</strong>.
+        </p>
+
+        <!-- Venue location map -->
+        <div style="margin-top: 24px; text-align: center;">
+            <iframe title="belgaum-foudry-cluster"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.631212359908!2d74.49331957573555!3d15.823388084820987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf669f5095362f%3A0x1718b39db16f6f50!2sBelgaum%20Foundry%20Cluster!5e0!3m2!1sen!2sie!4v1770058125200!5m2!1sen!2sie"
+                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="countdown-wrapper">
+            <div class="countdown-label">Time until the celebration</div>
+            <div class="countdown" id="countdown">Calculating…</div>
+        </div>
+
+        <p class="rsvp-intro">
+            Your presense would mean a lot to us. <br> Please confirm your attendance by completing the RSVP form below.
+        </p>
+        <p class="rsvp-deadline">
+            Kindly respond by the <strong><u>25th February, 2026</u></strong> so we can plan accordingly.
+        </p>
+
+        <div style="display: flex; justify-content: center; margin-top: 24px;">
+            <iframe class="iframe-rsvp"
+                src="https://www.rsvplite.com/e/wedding-ceremony-of-shivani-and-raghul"></iframe>
+        </div>
+    </div>
+
+    <script>
+        const weddingDate = new Date("2026-03-15T19:30:00").getTime();
+
+        const countdownTimer = setInterval(function () {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById("countdown").textContent =
+                    "Our wedding day has arrived – we look forward to celebrating with you.";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+            function unit(value, word) {
+                return value + " " + (value === 1 ? word : word + "s");
+            }
+
+            document.getElementById("countdown").textContent =
+                unit(days, "day") + " " +
+                unit(hours, "hour") + " " +
+                unit(mins, "minute") + " " +
+                unit(secs, "second") +
+                " to go";
+        }, 1000);
+    </script>
+</body>
+
+</html>
