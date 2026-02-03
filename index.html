@@ -30,11 +30,33 @@
             background: #ffffff;
             max-width: 800px;
             width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            padding: 40px 32px 32px;
+            padding: 50px 40px 40px;
+            /* Extra padding for border space */
             text-align: center;
             border: 1px solid #e5ded5;
+            position: relative;
+
+            /* Fancy wedding border */
+            border-radius: 24px;
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.12),
+                0 0 0 1px rgba(176, 143, 106, 0.15),
+                /* Gold accent */
+                inset 0 0 0 1px rgba(229, 222, 213, 0.5);
+
+            background-image:
+                radial-gradient(circle at top left, transparent 20px, #f8f4ed 21px),
+                radial-gradient(circle at top right, transparent 20px, #f8f4ed 21px),
+                radial-gradient(circle at bottom left, transparent 20px, #f8f4ed 21px),
+                radial-gradient(circle at bottom right, transparent 20px, #f8f4ed 21px);
+            background-size: 40px 40px;
+            background-repeat: no-repeat;
+            background-position: top 10px left 10px, top 10px right 10px,
+                bottom 10px left 10px, bottom 10px right 10px;
+            border: 2px solid transparent;
+            background: linear-gradient(white, white) padding-box,
+                linear-gradient(45deg, #d4af37, #b08f6a) border-box;
+            box-shadow: 0 20px 50px rgba(176, 143, 106, 0.15);
         }
 
         .monogram {
@@ -51,14 +73,6 @@
             font-size: 2.4rem;
             color: #2f2b26;
             margin-bottom: 8px;
-        }
-
-        .subtitle {
-            font-size: 0.95rem;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: #9b8b7a;
-            margin-bottom: 24px;
         }
 
         .names {
@@ -95,6 +109,7 @@
             border-radius: 16px;
             border: 1px solid #efe4d7;
             padding: 18px 22px;
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .countdown-label {
@@ -111,6 +126,18 @@
             color: #2f2b26;
         }
 
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .rsvp-intro {
             font-size: 0.98rem;
             color: #5f5850;
@@ -124,30 +151,21 @@
             margin-bottom: 24px;
         }
 
-        .iframe-container {
-            width: 100%;
-            max-width: 650px;
-            height: 0;
-            padding-bottom: 62%;
-            position: relative;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-            overflow: hidden;
-        }
-
         .iframe-rsvp {
             width: 100%;
-            max-width: 650px;
-            height: 1100px;
+            max-width: 520px;
+            height: 980px;
             border: none;
             border-radius: 16px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
         }
 
-        .footer-note {
-            font-size: 0.85rem;
-            color: #a39a91;
-            margin-top: 18px;
+        .map-container {
+            background: #f8f6f3;
+            border-radius: 16px;
+            padding: 20px;
+            margin: 24px auto;
+            max-width: 400px;
         }
 
         @media (max-width: 700px) {
@@ -163,22 +181,30 @@
                 font-size: 1.4rem;
             }
 
-            iframe {
-                height: 520px;
+            .iframe-rsvp {
+                height: 700px;
+            }
+
+            .map-container iframe {
+                height: 250px;
             }
         }
 
         @media (max-width: 480px) {
             h1 {
-                font-size: 1.8rem;
+                font-size: 1.7rem;
             }
 
             .countdown-wrapper {
                 padding: 14px 16px;
             }
 
-            iframe {
-                height: 460px;
+            .iframe-rsvp {
+                height: 600px;
+            }
+
+            .card {
+                padding: 24px 16px;
             }
         }
     </style>
@@ -187,68 +213,54 @@
 <body>
     <div class="card">
         <div class="monogram">Wedding Invitation</div>
-        <h1>We Are Getting Married!</h1> <br>
-
-        <!-- Replace with your names and venue details -->
-        <div class="names">Shivani &amp; Raghul</div> <br>
+        <h1>We Are Getting Married!</h1><br>
+        <div class="names">Shivani &amp; Raghul</div><br>
         <div class="and">together with our families</div>
-
         <p class="details">
             Request the pleasure of your company and be a part of our wedding celebration<br>
             Reception on <strong>Sunday, 15 March 2026, 7:30 PM onwards.</strong><br>
             Wedding on <strong>Sunday, 16 March 2026, (Muhurt) 9:13 AM.</strong><br><br>
             @ <strong>Belgaum Foundry Cluster, Belgaum, Karnataka</strong>.
         </p>
-
-        <!-- Venue location map -->
-        <div style="margin-top: 24px; text-align: center;">
-            <iframe title="belgaum-foudry-cluster"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.631212359908!2d74.49331957573555!3d15.823388084820987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf669f5095362f%3A0x1718b39db16f6f50!2sBelgaum%20Foundry%20Cluster!5e0!3m2!1sen!2sie!4v1770058125200!5m2!1sen!2sie"
-                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-
         <div class="countdown-wrapper">
             <div class="countdown-label">Time until the celebration</div>
             <div class="countdown" id="countdown">Calculating…</div>
         </div>
-
+        <div class="map-container">
+            <iframe title="belgaum-foundry-cluster"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.631212359908!2d74.49331957573555!3d15.823388084820987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf669f5095362f%3A0x1718b39db16f6f50!2sBelgaum%20Foundry%20Cluster!5e0!3m2!1sen!2sie!4v1770058125200!5m2!1sen!2sie"
+                width="100%" height="280" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
         <p class="rsvp-intro">
-            Your presense would mean a lot to us. <br> Please confirm your attendance by completing the RSVP form below.
+            Your presence would mean a lot to us.<br>Please confirm your attendance by completing the RSVP form below.
         </p>
         <p class="rsvp-deadline">
-            Kindly respond by the <strong><u>25th February, 2026</u></strong> so we can plan accordingly.
+            Kindly respond by the <u>25th February, 2026</u> so we can plan accordingly.
         </p>
-
-        <div style="display: flex; justify-content: center; margin-top: 24px;">
-            <iframe class="iframe-rsvp"
+        <div style="display: flex; justify-content: center; margin-top: 24px">
+            <iframe title="rsvp-invite" class="iframe-rsvp"
                 src="https://www.rsvplite.com/e/wedding-ceremony-of-shivani-and-raghul"></iframe>
         </div>
     </div>
 
     <script>
         const weddingDate = new Date("2026-03-15T19:30:00").getTime();
-
         const countdownTimer = setInterval(function () {
             const now = new Date().getTime();
             const distance = weddingDate - now;
-
             if (distance < 0) {
                 clearInterval(countdownTimer);
-                document.getElementById("countdown").textContent =
-                    "Our wedding day has arrived – we look forward to celebrating with you.";
+                document.getElementById("countdown").textContent = "Our wedding day has arrived – we look forward to celebrating with you.";
                 return;
             }
-
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const secs = Math.floor((distance % (1000 * 60)) / 1000);
-
             function unit(value, word) {
                 return value + " " + (value === 1 ? word : word + "s");
             }
-
             document.getElementById("countdown").textContent =
                 unit(days, "day") + " " +
                 unit(hours, "hour") + " " +
